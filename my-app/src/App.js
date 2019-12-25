@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 
 
 
@@ -29,13 +29,13 @@ window.store = createStoreWithMiddleware(combineReducers, _omit(window.DATA, ['e
 class App extends Component {
     render() {
         return (
-              <Provider store={window.store} >
-                  <BrowserRouter>
-                      <div id="global-container">
-                          <RouterCenter />
-                      </div>
-                  </BrowserRouter>
-              </Provider>
+            <Provider store={window.store} >
+                <BrowserRouter>
+                    <div id="global-container">
+                        <RouterCenter />
+                    </div>
+                </BrowserRouter>
+            </Provider>
         );
     }
 }

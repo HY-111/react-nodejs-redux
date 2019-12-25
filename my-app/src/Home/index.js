@@ -1,10 +1,10 @@
 
 import React, { Component } from 'react';
 import { update } from '../store/reducerCreator'
+import {connect} from 'react-redux';
 const axios = require('axios');
 
 class HomePage extends Component {
-
     componentDidMount() {
         axios({
             method: "post",
@@ -56,5 +56,9 @@ class HomePage extends Component {
         );
     }
 }
-export default HomePage;
+function filter(state) {
+    let {isLogin} = state;
+    return {isLogin};
+}
+export default connect(filter)(HomePage);
 
